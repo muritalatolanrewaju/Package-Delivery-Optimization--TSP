@@ -4,7 +4,6 @@
 This project aims to solve a real-world package delivery problem using the Traveling Salesman Problem (TSP) as a basis. The goal is to optimize the delivery routes for a truck fleet to minimize the distance traveled while meeting various constraints such as delivery time windows, truck capacities, and special package requirements.
 
 ## Features
-
 - **Route Optimization:** Utilizes the 2-opt algorithm to find the most efficient route for each truck.
 - **Time Complexity:** Efficiently calculates the time taken for each route and updates package statuses in real-time.
 - **Dynamic Loading:** Packages are dynamically loaded onto trucks based on various constraints.
@@ -13,7 +12,6 @@ This project aims to solve a real-world package delivery problem using the Trave
 - **Package-specific Queries:** Allows users to query the status of a specific package at a specific time.
 
 ## Project Assumptions
-
 - Each truck can carry up to 16 packages.
 - Trucks travel at an average speed of 18 mph.
 - Three trucks and two drivers are available.
@@ -23,7 +21,6 @@ This project aims to solve a real-world package delivery problem using the Trave
 - Distances are equal regardless of the direction traveled.
 - The day ends when all 40 packages have been delivered.
 
-
 ## Dependencies
 - Python 3.x
 
@@ -31,23 +28,6 @@ This project aims to solve a real-world package delivery problem using the Trave
 - Clone the repository.
 - Navigate to the project directory.
 - Run python main.py to start the program.
-
-## Code Structure
-- **`fancy_print(text, color_code):`** Prints text with ANSI color codes.
-- **`optimize(addresses_to_visit, distance_data):`** Optimizes the delivery route using the 2-opt algorithm.
-- **`two_opt_swap(route, i, k):`** Swaps two addresses in the route for optimization.
-- **`tick(mile, current_time):`** Calculates the time it takes to travel a mile.
-- **`cost(route, cost_data, ...):`** Calculates the cost of a route in terms of distance.
-- **`update_pkg_status(address, pkg_data, time):`** Updates the status of a package after delivery.
-- **`find_pkg_status(package, check_time, pkg_data):`** Finds the status of a specific package.
-- **`PackageDelivery`**: Main class for package delivery.
-- **`__init__(self, package_data, distance_data):`** Initializes the object.
-- **`load_trucks(self):`** Loads trucks with packages.
-- **`deliver(self, status, ...):`** Performs the actual delivery.
-- **`print_delivery_details(self, miles):`** Prints delivery details.
-- **`print_status_at_time(self, hour, minute):`** Prints package statuses at a specific time.
-- **`print_specific_package_status(self, hour, minute, pkg_id):`** Prints the status of a specific package.
-- **`check_package_status_between_times(self, start_time, end_time):`** Checks the status of all packages between two times.
 
 ## User Command Line Interface
 
@@ -91,6 +71,23 @@ This project aims to solve a real-world package delivery problem using the Trave
 +------------------------------------------------------+
 |  Enter command:
 ```
+
+## Code Structure
+- **`fancy_print(text, color_code):`** Prints text with ANSI color codes.
+- **`optimize(addresses_to_visit, distance_data):`** Optimizes the delivery route using the 2-opt algorithm.
+- **`two_opt_swap(route, i, k):`** Swaps two addresses in the route for optimization.
+- **`tick(mile, current_time):`** Calculates the time it takes to travel a mile.
+- **`cost(route, cost_data, ...):`** Calculates the cost of a route in terms of distance.
+- **`update_pkg_status(address, pkg_data, time):`** Updates the status of a package after delivery.
+- **`find_pkg_status(package, check_time, pkg_data):`** Finds the status of a specific package.
+- **`PackageDelivery`**: Main class for package delivery.
+- **`__init__(self, package_data, distance_data):`** Initializes the object.
+- **`load_trucks(self):`** Loads trucks with packages.
+- **`deliver(self, status, ...):`** Performs the actual delivery.
+- **`print_delivery_details(self, miles):`** Prints delivery details.
+- **`print_status_at_time(self, hour, minute):`** Prints package statuses at a specific time.
+- **`print_specific_package_status(self, hour, minute, pkg_id):`** Prints the status of a specific package.
+- **`check_package_status_between_times(self, start_time, end_time):`** Checks the status of all packages between two times.
 
 ## Contributing
 Feel free to fork the project and submit a pull request with your changes!
