@@ -1,14 +1,18 @@
-# WGUPS Routing Program 
+# Package Delivery Optimization using TSP (Traveling Salesman Problem)
 
-## Introduction
+## Overview
+This project aims to solve a real-world package delivery problem using the Traveling Salesman Problem (TSP) as a basis. The goal is to optimize the delivery routes for a truck fleet to minimize the distance traveled while meeting various constraints such as delivery time windows, truck capacities, and special package requirements.
 
-This project aims to solve a real-world problem using algorithms and data structures. Specifically, the task is to implement a routing program for the Western Governors University Parcel Service (WGUPS) to ensure that all packages are delivered on time while minimizing the distance traveled by the delivery trucks. This project can be a valuable addition to your portfolio and may also help you in technical interviews.
+## Features
 
-## Scenario
+- **Route Optimization:** Utilizes the 2-opt algorithm to find the most efficient route for each truck.
+- **Time Complexity:** Efficiently calculates the time taken for each route and updates package statuses in real-time.
+- **Dynamic Loading:** Packages are dynamically loaded onto trucks based on various constraints.
+- **User Interface:** Provides a colorful terminal interface to display package statuses and delivery details.
+- **Time-based Queries:** Allows users to query the status of all packages at a specific time or within a time range.
+- **Package-specific Queries:** Allows users to query the status of a specific package at a specific time.
 
-WGUPS is facing challenges in delivering packages on time. The Salt Lake City route has three trucks, two drivers, and an average of 40 packages to deliver daily. Each package has specific delivery requirements. The objective is to develop an algorithm and write code to ensure that all 40 packages are delivered on time while keeping the total distance traveled under 140 miles for two trucks.
-
-## Assumptions
+## Project Assumptions
 
 - Each truck can carry up to 16 packages.
 - Trucks travel at an average speed of 18 mph.
@@ -19,70 +23,33 @@ WGUPS is facing challenges in delivering packages on time. The Salt Lake City ro
 - Distances are equal regardless of the direction traveled.
 - The day ends when all 40 packages have been delivered.
 
-## Requirements
 
-- A. Develop a hash table for package information. [hash table](src/hash_table.py)
+## Dependencies
+- Python 3.x
 
-- B. Implement a look-up function for package details. [look-up function](src/package.py)
+## How to Run
+- Clone the repository.
+- Navigate to the project directory.
+- Run python main.py to start the program.
 
-- C. Write the main program to deliver all packages. [main program](src/main.py)
+## Code Structure
+- **`fancy_print(text, color_code):`** Prints text with ANSI color codes.
+- **`optimize(addresses_to_visit, distance_data):`** Optimizes the delivery route using the 2-opt algorithm.
+- **`two_opt_swap(route, i, k):`** Swaps two addresses in the route for optimization.
+- **`tick(mile, current_time):`** Calculates the time it takes to travel a mile.
+- **`cost(route, cost_data, ...):`** Calculates the cost of a route in terms of distance.
+- **`update_pkg_status(address, pkg_data, time):`** Updates the status of a package after delivery.
+- **`find_pkg_status(package, check_time, pkg_data):`** Finds the status of a specific package.
+- **`PackageDelivery`**: Main class for package delivery.
+- **`__init__(self, package_data, distance_data):`** Initializes the object.
+- **`load_trucks(self):`** Loads trucks with packages.
+- **`deliver(self, status, ...):`** Performs the actual delivery.
+- **`print_delivery_details(self, miles):`** Prints delivery details.
+- **`print_status_at_time(self, hour, minute):`** Prints package statuses at a specific time.
+- **`print_specific_package_status(self, hour, minute, pkg_id):`** Prints the status of a specific package.
+- **`check_package_status_between_times(self, start_time, end_time):`** Checks the status of all packages between two times.
 
-- D. Provide an intuitive user interface. [User Interface](#user-interface)
-  - [Package status between 8:35 a.m. and 9:25 a.m.](files/screenshot/package_status_at_specific_time_d1.png)
-  - [Package status between 9:35 a.m. and 10:25 a.m.](files/screenshot/package_status_at_specific_time_d2.png)
-  - [Package status between 12:03 p.m. and 1:12 p.m.](files/screenshot/package_status_at_specific_time_d3.png)
-
-- E. Screenshots showing successful completion of the code. [Screenshots](files/screenshot/package_status_at_delivery_completion.png)
-
-- F. Justify the package delivery algorithm used in the solution as written in the original program.
-
-- G.  Describe what you would do differently, other than the two algorithms identified.
-
-- H.  Verify that the data structure used in the solution meets all requirements in the scenario.
-
-
-## Installation
-
-1. Clone the repository
-
-```commandline
-git clone repo_url
-```
-
-2. Navigate to the project directory
-
-```commandline
-cd WGUPS-Routing-Program
-```
-
-3. Install the dependencies
-
-- On Windows, download and install [Python 3.9.0](https://www.python.org/downloads/release/python-390/)
-
-- On Mac, download and install [Python 3.9.0](https://www.python.org/downloads/release/python-390/)
-
-- On Linux CLI, install Python 3.9.0
-
-    ```bash
-    sudo apt-get install python3.9.0
-    ```
-
-
-- Create a virtual environment
-
-    ```commandline
-    python -m venv venv
-    ```
-
-## Usage
-
-Run the program
-
-```commandline
-python main.py
-```
-
-## User Interface
+## User Command Line Interface
 
 ```commandline
 ++====================================================++
@@ -124,3 +91,9 @@ python main.py
 +------------------------------------------------------+
 |  Enter command:
 ```
+
+## Contributing
+Feel free to fork the project and submit a pull request with your changes!
+
+## License
+This project is licensed under the GNU License.
