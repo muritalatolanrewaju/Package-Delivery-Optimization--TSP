@@ -5,10 +5,10 @@
 # Import necessary modules and classes
 import datetime
 from file import File
-from src import package_delivery
-from src.distance import Distance
-from src.package import Package
-from src.package_delivery import PackageDelivery
+import package_delivery
+from distance import Distance
+from package import Package
+from package_delivery import PackageDelivery
 
 
 # Function to load package data from a CSV file and return as a hash table

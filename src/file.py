@@ -3,8 +3,8 @@
 
 import csv
 
-from src.hash_table import SelfAdjustingHash
-from src.package import Package
+from hash_table import SelfAdjustingHash
+from package import Package
 
 
 class File:
