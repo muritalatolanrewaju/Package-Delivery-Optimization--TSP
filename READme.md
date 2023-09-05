@@ -1,4 +1,4 @@
-# Package Delivery Optimization using TSP (Traveling Salesman Problem)
+# Package Delivery Optimization (Traveling Salesman Problem)
 
 ## Overview
 This project aims to solve a real-world package delivery problem using the Traveling Salesman Problem (TSP) as a basis. The goal is to optimize the delivery routes for a truck fleet to minimize the distance traveled while meeting various constraints such as delivery time windows, truck capacities, and special package requirements.
