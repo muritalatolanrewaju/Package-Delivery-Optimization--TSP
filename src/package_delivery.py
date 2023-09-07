@@ -97,7 +97,7 @@ def update_pkg_status(address, pkg_data, time):
 # Function to find the status of a specific package
 def find_pkg_status(package, check_time, pkg_data):
     for _, pkg in pkg_data:
-        if pkg.pkg.package_id == package.pkg.package_id:
+        if pkg.package_id == package.package_id:
             print(f'\nAt {check_time.time()}\n\n{package}')
             return True
     return False
